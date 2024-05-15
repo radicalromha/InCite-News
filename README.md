@@ -1,16 +1,5 @@
-# Project React App
+# Project Incite
 
-## What are we starting here Eskinder?
+## This is a React App that basically functions as a news source
 
-Good question this is a base react app.
-That will used for god knows what but we'll figure it out.
-
-Basic setup complete installed babel and webpack
-
-Decided on working on the landing page for now.
-
-In the unfortunate circumstance that this becomes a protfolio website
-
-My first idea was an app that tells you the weather but only if the lat and long were palindromes.
-
-## Well that esclated quickly
+The goal with Incite is to not nesscarily incite an angry mob (although that couldn't hurt to have) the goal is to deviler criticaal, wonderful and obsercure news to your front page.
