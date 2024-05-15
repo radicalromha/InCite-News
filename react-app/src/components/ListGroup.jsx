@@ -1,5 +1,3 @@
-import { MouseEvent } from "react";
-
 function ListGroup() {
   let items = [
     "About",
