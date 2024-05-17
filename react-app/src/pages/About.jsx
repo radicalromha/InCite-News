@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import aboutUsImage from "../assets/aboutus.png";
 
 const AboutContainer = styled.div`
@@ -28,10 +29,31 @@ const AboutImage = styled.img`
   border-radius: 8px;
   margin: 2em 0;
 `;
+const NavLink = styled(Link)`
+  display: inline-block;
+  margin: 1em;
+  padding: 0.5em 1em;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
 
 const About = () => {
   return (
     <AboutContainer>
+      <AboutContainer>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/world">World</NavLink>
+        <NavLink to="/breaking">Breaking</NavLink>
+        <NavLink to="/business">Business</NavLink>
+        <NavLink to="/tech">Tech</NavLink>
+        <NavLink to="/legal">Legal</NavLink>
+      </AboutContainer>
       <AboutHeading>About Us</AboutHeading>
       <AboutContent>
         <h1>
@@ -50,8 +72,15 @@ const About = () => {
       <AboutImage align="center" src={aboutUsImage} alt="About Us" />
       <AboutHeading>Mission Statement</AboutHeading>
       <AboutContent>
-        The reality of the situation is that most people a
+        The reality of the situation is that most people arent aware of global
+        confilcts or global affairs in general. People often absolve themselves
+        by sayin "I need to educate myself on the issue" but never do. The whole
+        point with InCite is to have a platform that isnt too cumbersome when
+        delivering news or information.
       </AboutContent>
+      <p>
+        get informed get<h1>InCited</h1>
+      </p>
     </AboutContainer>
   );
 };
