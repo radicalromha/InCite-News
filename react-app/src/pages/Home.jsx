@@ -35,13 +35,13 @@ const NavLink = styled(Link)`
 const Home = () => {
   return (
     <HomeContainer>
-      <HomeHeading>Welcome to Our Website</HomeHeading>
+      <HomeHeading>Incite</HomeHeading>
       <HomeContent>
         Explore our site to learn more about us and what we offer.
       </HomeContent>
-      <NavLink to="/about">About Us</NavLink>
-      <NavLink to="/world">World News</NavLink>
-      <NavLink to="/breaking">Breaking News</NavLink>
+      <NavLink to="/about">About</NavLink>
+      <NavLink to="/world">World</NavLink>
+      <NavLink to="/breaking">Breaking</NavLink>
       <NavLink to="/business">Business</NavLink>
       <NavLink to="/tech">Tech</NavLink>
       <NavLink to="/legal">Legal</NavLink>
