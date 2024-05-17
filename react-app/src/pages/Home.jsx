@@ -16,6 +16,7 @@ const HomeContent = styled.p`
   font-size: 1.2em;
   line-height: 1.6;
   color: #666;
+  font-color: #0000;
 `;
 
 const NavLink = styled(Link)`
@@ -37,7 +38,8 @@ const Home = () => {
     <HomeContainer>
       <HomeHeading>Incite</HomeHeading>
       <HomeContent>
-        Explore our site to learn more about us and what we offer.
+        In the age of digital uproar, where everyone's patience is short so is
+        the news.
       </HomeContent>
       <NavLink to="/about">About</NavLink>
       <NavLink to="/world">World</NavLink>

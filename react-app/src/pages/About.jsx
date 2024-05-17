@@ -30,10 +30,7 @@ const About = () => {
     <AboutContainer>
       <AboutHeading>About Us</AboutHeading>
       <AboutContent>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis
-        libero libero, nec venenatis nulla commodo sit amet. Mauris auctor,
-        mauris quis ultrices feugiat, risus sapien maximus elit, sed tempor
-        metus leo vitae enim.
+        InCite is a new way of conceptualizing news and media in general.
       </AboutContent>
       <AboutImage src="https://via.placeholder.com/800x400" alt="About Us" />
       <AboutContent>
