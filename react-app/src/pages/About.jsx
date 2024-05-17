@@ -32,16 +32,14 @@ const About = () => {
       <AboutHeading>About Us</AboutHeading>
       <AboutContent>
         <h1>
-          InCite is a new way of conceptualizing news and media in general.
+          InCite is a new way of conceptualizing news and media in general peep
+          game and lock in
         </h1>
       </AboutContent>
       <AboutImage src="https://via.placeholder.com/800x400" alt="About Us" />
       <AboutContent>
-        Integer ultrices ipsum id ligula tincidunt, eget sollicitudin est
-        fermentum. Quisque sed ex ligula. Vivamus tincidunt venenatis quam, non
-        aliquet felis pellentesque ac. Aenean eu lobortis quam. Aliquam erat
-        volutpat. Fusce sit amet lacus id ante aliquet scelerisque. Morbi
-        fermentum lorem at velit feugiat, nec gravida justo dictum.
+        InCite is a new type of media created in May 2024 by Eskinder Fitsum.
+        Who is a computer science student at Illinois Tech
       </AboutContent>
       <AboutContent>
         Praesent cursus sem magna, euismod ultrices lorem facilisis id. Fusce
