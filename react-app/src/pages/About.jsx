@@ -9,7 +9,8 @@ const AboutContainer = styled.div`
 const AboutHeading = styled.h1`
   font-size: 2.5em;
   margin-bottom: 1em;
-  color: #333;
+  color: black; /* or any color that is hella glarey */
+  text-align: center;
 `;
 
 const AboutContent = styled.p`
@@ -30,7 +31,9 @@ const About = () => {
     <AboutContainer>
       <AboutHeading>About Us</AboutHeading>
       <AboutContent>
-        InCite is a new way of conceptualizing news and media in general.
+        <h1>
+          InCite is a new way of conceptualizing news and media in general.
+        </h1>
       </AboutContent>
       <AboutImage src="https://via.placeholder.com/800x400" alt="About Us" />
       <AboutContent>

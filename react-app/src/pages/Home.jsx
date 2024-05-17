@@ -9,7 +9,7 @@ const HomeContainer = styled.div`
 const HomeHeading = styled.h1`
   font-size: 2.5em;
   margin-bottom: 1em;
-  color: #333;
+  color: #0000;
 `;
 
 const HomeContent = styled.p`
@@ -38,8 +38,10 @@ const Home = () => {
     <HomeContainer>
       <HomeHeading>Incite</HomeHeading>
       <HomeContent>
-        In the age of digital uproar, where everyone's patience is short so is
-        the news.
+        <h1>
+          In the age of digital uproar, where everyone's patience is short so is
+          the news.
+        </h1>
       </HomeContent>
       <NavLink to="/about">About</NavLink>
       <NavLink to="/world">World</NavLink>
