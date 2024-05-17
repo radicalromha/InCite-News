@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import aboutUsImage from "../assets/aboutus.png";
 
 const AboutContainer = styled.div`
   padding: 2em;
@@ -14,9 +15,11 @@ const AboutHeading = styled.h1`
 `;
 
 const AboutContent = styled.p`
-  font-size: 1.2em;
+  font-size: 2.5em;
   line-height: 1.6;
   color: #666;
+  text-align: center;
+  color: black;
 `;
 
 const AboutImage = styled.img`
@@ -32,21 +35,22 @@ const About = () => {
       <AboutHeading>About Us</AboutHeading>
       <AboutContent>
         <h1>
-          InCite is a new way of conceptualizing news and media in general peep
-          game and lock in
+          InCite is a new way of conceptualizing social news and media in
+          general so peep game and lock in.
         </h1>
       </AboutContent>
-      <AboutImage src="https://via.placeholder.com/800x400" alt="About Us" />
       <AboutContent>
         InCite is a new type of media created in May 2024 by Eskinder Fitsum.
-        Who is a computer science student at Illinois Tech
+        I'm a computer science student at Illinois Tech, who enjoys software
+        developement. In November of 2020 the Tigray region of Ethiopia went
+        through tremendous conflict, and when you are so preoccupied with
+        something that the average person has no idea about that is kinda the
+        inspiration for InCite.
       </AboutContent>
+      <AboutImage align="center" src={aboutUsImage} alt="About Us" />
+      <AboutHeading>Mission Statement</AboutHeading>
       <AboutContent>
-        Praesent cursus sem magna, euismod ultrices lorem facilisis id. Fusce
-        faucibus urna at augue convallis tincidunt. Donec aliquet odio non
-        ligula euismod, sed hendrerit nisl ultricies. Etiam ut metus a arcu
-        interdum tempor. Nulla facilisi. Etiam sit amet lorem a nunc volutpat
-        suscipit.
+        The reality of the situation is that most people a
       </AboutContent>
     </AboutContainer>
   );
