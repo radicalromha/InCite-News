@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./index.css";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import World from "./pages/World";
@@ -21,7 +22,6 @@ const App = () => {
         <Route path="/tech" element={<Tech />} />
         <Route path="/legal" element={<Legal />} />
         <Route path="*" element={<NotFound />} />
-        <div className="text "></div>
       </Routes>
     </Router>
   );

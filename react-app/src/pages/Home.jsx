@@ -1,55 +1,55 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
-
-const HomeContainer = styled.div`
-  padding: 2em;
-  text-align: center;
-`;
-
-const HomeHeading = styled.h1`
-  font-size: 2.5em;
-  margin-bottom: 1em;
-  color: #0000;
-`;
-
-const HomeContent = styled.p`
-  font-size: 1.2em;
-  line-height: 1.6;
-  color: #666;
-  font-color: #0000;
-`;
-
-const NavLink = styled(Link)`
-  display: inline-block;
-  margin: 1em;
-  padding: 0.5em 1em;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-
-  &:hover {
-    background-color: #0056b3;
-  }
-`;
 
 const Home = () => {
   return (
-    <HomeContainer>
-      <HomeHeading>Incite</HomeHeading>
-      <HomeContent>
-        <h1>
-          In the age of digital uproar, where everyone's patience is short so is
-          the news.
+    <div className="p-8 text-center">
+      <h1 className="text-4xl mb-4 text-black font">InCite</h1>
+      <p className="text-enter leading-8 text-black-600">
+        <h1 className="text-center text-red-500 font-bold">
+          In the age of digital uproar. Where everyone's patience is short, so
+          is the news.
         </h1>
-      </HomeContent>
-      <NavLink to="/about">About</NavLink>
-      <NavLink to="/world">World</NavLink>
-      <NavLink to="/breaking">Breaking</NavLink>
-      <NavLink to="/business">Business</NavLink>
-      <NavLink to="/tech">Tech</NavLink>
-      <NavLink to="/legal">Legal</NavLink>
-    </HomeContainer>
+      </p>
+      <nav>
+        <Link
+          to="/about"
+          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded no-underline"
+        >
+          About
+        </Link>
+
+        <Link
+          to="/world"
+          className="inline-block m-4 py-2 px-4 bg-blue-500 text-black no-underline rounded hover:bg-blue-700"
+        >
+          World
+        </Link>
+        <Link
+          to="/breaking"
+          className="inline-block m-4 p-2 bg-blue-500 text-black no-underline rounded hover:bg-blue-700"
+        >
+          Breaking
+        </Link>
+        <Link
+          to="/business"
+          className="inline-block m-4 p-2 bg-blue-500 text-black no-underline rounded hover:bg-blue-700"
+        >
+          Business
+        </Link>
+        <Link
+          to="/tech"
+          className="inline-block m-4 p-2 bg-blue-500 text-black no-underline rounded hover:bg-blue-700"
+        >
+          Tech
+        </Link>
+        <Link
+          to="/legal"
+          className="inline-block m-4 p-2 bg-blue-500 text-black no-underline rounded hover:bg-blue-700"
+        >
+          Legal
+        </Link>
+      </nav>
+    </div>
   );
 };
 
