@@ -74,9 +74,9 @@ const About = () => {
       <AboutContent>
         The reality of the situation is that most people arent aware of global
         confilcts or global affairs in general. People often absolve themselves
-        by sayin "I need to educate myself on the issue" but never do. The whole
-        point with InCite is to have a platform that isnt too cumbersome when
-        delivering news or information.
+        by sayin "I need to educate myself on these issues" but never do. The
+        whole point with InCite is to have a platform that isnt too cumbersome
+        when delivering news or information.
       </AboutContent>
       <p>
         get informed get<h1>InCited</h1>

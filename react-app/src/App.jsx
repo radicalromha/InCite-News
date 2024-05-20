@@ -21,6 +21,7 @@ const App = () => {
         <Route path="/tech" element={<Tech />} />
         <Route path="/legal" element={<Legal />} />
         <Route path="*" element={<NotFound />} />
+        <div className="text "></div>
       </Routes>
     </Router>
   );
