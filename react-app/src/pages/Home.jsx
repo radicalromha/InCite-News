@@ -3,21 +3,23 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="p-8 text-center">
+      <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-gray-900 text-white shawow-lg">
+        <i>A</i>
+        <i>B</i>
+        <i>C</i>
+        <i>D</i>
+        <i>E</i>
+      </div>
       <h1 className="text-4xl mb-4 text-black font">InCite</h1>
-      <p className="text-enter leading-8 text-black-600">
-        <h1 className="text-center text-red-500 font-bold">
-          In the age of digital uproar. Where everyone's patience is short, so
-          is the news.
-        </h1>
-      </p>
+      <h1 className="text-center text-red-500 font-bold">
+        In the age of digital uproar. Where everyone's patience is short, so is
+        the news.
+      </h1>
+
       <nav>
-        <Link
-          to="/about"
-          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded no-underline"
-        >
+        <Link to="/about" className="button-link">
           About
         </Link>
-
         <Link
           to="/world"
           className="inline-block m-4 py-2 px-4 bg-blue-500 text-black no-underline rounded hover:bg-blue-700"

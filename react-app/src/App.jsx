@@ -7,6 +7,7 @@ import Breaking from "./pages/Breaking";
 import Business from "./pages/Business";
 import Tech from "./pages/Tech";
 import Legal from "./pages/Legal";
+import SideBar from "./components/SideBar";
 
 const NotFound = () => <div>404 - Page Not Found</div>;
 
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/tech" element={<Tech />} />
         <Route path="/legal" element={<Legal />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<SideBar />} />
       </Routes>
     </Router>
   );
