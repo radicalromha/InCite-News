@@ -1,22 +1,69 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer components {
-  .button-link {
-    @apply bg-white text-blue-700 font-semibold py-2 px-4 border border-blue-500 rounded transition-colors;
-  }
-
-  .button-link:hover {
-    @apply bg-blue-500 text-black border-transparent;
-  }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-@layer base {
-  @font-face {
-    font-family: "Jersey 15", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    src: url(/fonts/Jersey-15);
-  }
+.container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 4rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a202c;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 1rem;
+}
+
+.sidebar i {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.subheading {
+  color: #f56565;
+  font-weight: bold;
+}
+
+.nav-link {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #0056b3;
+}
+
+.custom-link {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: black;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+
+.custom-link:hover {
+  background-color: #0056b3;
 }
