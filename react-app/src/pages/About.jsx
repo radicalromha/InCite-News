@@ -6,7 +6,7 @@ import enviromeme from "../assets/enviromeme.png";
 import humanitarian from "../assets/humanitarian.png";
 
 const AboutPage = styled.div`
-  background-color: #f9f9f9;
+  background-color: #d3d3d3;
 `;
 const AboutContainer = styled.div`
   padding: 2em;
@@ -92,53 +92,56 @@ const NavLink = styled(Link)`
 
 const About = () => {
   return (
-    <AboutContainer>
-      <AboutNavContainer>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/world">World</NavLink>
-        <NavLink to="/breaking">Breaking</NavLink>
-        <NavLink to="/business">Business</NavLink>
-        <NavLink to="/tech">Tech</NavLink>
-        <NavLink to="/legal">Legal</NavLink>
-      </AboutNavContainer>
-      <AboutHeading>about us</AboutHeading>
-      <AboutHook>
-        InCite is a new way of conceptualizing social and news media in general
-        so peep game and lock in.
-      </AboutHook>
-      <ImageContainer>
-        <AboutImage
-          align="left"
-          src={enviromeme}
-          alt="Meme and information about the enviroment"
-        />
-        <AboutImage
-          align="center"
-          src={incitememe}
-          alt="Humanitarian information about website"
-        />
-        <AboutImage
-          align="center"
-          src={humanitarian}
-          alt="Meme about website"
-        />
-      </ImageContainer>
-      <AboutIntro>
-        InCite is a new type of media created in may 2024 by eskinder fitsum. in
-        november of 2020 the tigray region of ethiopia went through tremendous
-        conflict, and when you are so preoccupied with something that the
-        average person has no idea about that is the inspiration for InCite.
-      </AboutIntro>
-      <ImageContainer>
-        <AboutImage align="center" src={aboutUsImage} alt="About Us" />
-      </ImageContainer>
-      <AboutHeading>mission statement</AboutHeading>
-      <AboutLowerContent>
-        most people don't really know much about global conflicts or what's
-        happening around the world, lets change that.
-      </AboutLowerContent>
-      <AboutBottom>get informed get InCited</AboutBottom>
-    </AboutContainer>
+    <AboutPage>
+      <AboutContainer>
+        <AboutNavContainer>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/world">World</NavLink>
+          <NavLink to="/breaking">Breaking</NavLink>
+          <NavLink to="/business">Business</NavLink>
+          <NavLink to="/tech">Tech</NavLink>
+          <NavLink to="/legal">Legal</NavLink>
+        </AboutNavContainer>
+        <AboutHeading>about us</AboutHeading>
+        <AboutHook>
+          InCite is a new way of conceptualizing social and news media in
+          general so peep game and lock in.
+        </AboutHook>
+        <ImageContainer>
+          <AboutImage
+            align="left"
+            src={enviromeme}
+            alt="Meme and information about the enviroment"
+          />
+          <AboutImage
+            align="center"
+            src={incitememe}
+            alt="Humanitarian information about website"
+          />
+          <AboutImage
+            align="center"
+            src={humanitarian}
+            alt="Meme about website"
+          />
+        </ImageContainer>
+        <AboutIntro>
+          InCite is a new type of media created in may 2024 by eskinder fitsum.
+          in november of 2020 the tigray region of ethiopia went through
+          tremendous conflict, and when you are so preoccupied with something
+          that the average person has no idea about that is the inspiration for
+          InCite.
+        </AboutIntro>
+        <ImageContainer>
+          <AboutImage align="center" src={aboutUsImage} alt="About Us" />
+        </ImageContainer>
+        <AboutHeading>mission statement</AboutHeading>
+        <AboutLowerContent>
+          most people don't really know much about global conflicts or what's
+          happening around the world, lets change that.
+        </AboutLowerContent>
+        <AboutBottom>get informed get InCited</AboutBottom>
+      </AboutContainer>
+    </AboutPage>
   );
 };
 
