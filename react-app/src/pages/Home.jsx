@@ -36,10 +36,8 @@ const NavLink = styled(Link)`
 const Home = () => {
   return (
     <HomeContainer>
-      <HomeHeading>Welcome to InCite</HomeHeading>
-      <HomeContent>
-        Explore our site to learn more about us and what we offer.
-      </HomeContent>
+      <HomeHeading>welcome to InCite</HomeHeading>
+      <HomeContent>where attention spans are short so is the news</HomeContent>
       <NavLink to="/about">About Us</NavLink>
       <NavLink to="/world">World News</NavLink>
       <NavLink to="/breaking">Breaking News</NavLink>

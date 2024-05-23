@@ -7,6 +7,7 @@ import humanitarian from "../assets/humanitarian.png";
 
 const AboutPage = styled.div`
   background-color: #d3d3d3;
+  border-radius: 8px;
 `;
 const AboutContainer = styled.div`
   padding: 2em;
@@ -51,6 +52,7 @@ const ImageContainer = styled.div`
   justify-content: space-between;
   margin-bottom: 20px;
 `;
+
 const AboutLowerContent = styled.p`
   font-family: "Garamond", sans-serif;
   font-size: 2em;
@@ -67,7 +69,14 @@ const AboutImage = styled.img`
   margin: 2em 0;
   margin-right: 10px;
 `;
-
+const AboutUsImage = styled.img`
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 2em 0;
+  display: block; /* Add this line */
+  margin: 0 auto; /* Add this line */
+`;
 const AboutBottom = styled.p`
   font-size: 2.5em;
   line-height: 1.6;
@@ -132,7 +141,7 @@ const About = () => {
           InCite.
         </AboutIntro>
         <ImageContainer>
-          <AboutImage align="center" src={aboutUsImage} alt="About Us" />
+          <AboutUsImage align="center" src={aboutUsImage} alt="About Us" />
         </ImageContainer>
         <AboutHeading>mission statement</AboutHeading>
         <AboutLowerContent>
