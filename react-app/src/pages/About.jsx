@@ -1,9 +1,14 @@
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import aboutUsImage from "../assets/aboutus.png";
 import incitememe from "../assets/incitememe.png";
 import enviromeme from "../assets/enviromeme.png";
 import humanitarian from "../assets/humanitarian.png";
+import "slick-carousel/slick/slick.css";
+
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const AboutPage = styled.div`
   background-color: #d3d3d3;
@@ -25,7 +30,7 @@ const AboutNavContainer = styled.div`
 const AboutHeading = styled.h1`
   font-size: 4.5em;
   margin-bottom: 1em;
-  color: black; /* or any color that is hella glarey */
+  color: black;
   text-align: center;
   font-weight: bold;
   font-style: italic;
@@ -34,7 +39,7 @@ const AboutHook = styled.h1`
   font-family: "Jersey 15", sans-serif;
   font-size: 2.5em;
   margin-bottom: 1em;
-  color: black; /* or any color that is hella glarey */
+  color: black;
   text-align: center;
 `;
 const AboutIntro = styled.p`
@@ -47,10 +52,20 @@ const AboutIntro = styled.p`
   text-align: center;
 `;
 
-const ImageContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
+const ImageCarousel = styled(Slider)`
   margin-bottom: 20px;
+  .slick-slide > div {
+    padding: 0 10px;
+  }
+  .slick-list {
+    margin: 0 -10px;
+  }
+`;
+
+const CarouselImage = styled.img`
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 `;
 
 const AboutLowerContent = styled.p`
@@ -62,20 +77,13 @@ const AboutLowerContent = styled.p`
   text-align: center;
   color: black;
 `;
-const AboutImage = styled.img`
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 2em 0;
-  margin-right: 10px;
-`;
 const AboutUsImage = styled.img`
   max-width: 100%;
   height: auto;
   border-radius: 8px;
   margin: 2em 0;
-  display: block; /* Add this line */
-  margin: 0 auto; /* Add this line */
+  display: block;
+  margin: 0 auto;
 `;
 const AboutBottom = styled.p`
   font-size: 2.5em;
@@ -100,6 +108,16 @@ const NavLink = styled(Link)`
 `;
 
 const About = () => {
+  const carouselSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+
   return (
     <AboutPage>
       <AboutContainer>
@@ -116,23 +134,23 @@ const About = () => {
           InCite is a new way of conceptualizing social and news media in
           general so peep game and lock in.
         </AboutHook>
-        <ImageContainer>
-          <AboutImage
-            align="left"
-            src={enviromeme}
-            alt="Meme and information about the enviroment"
-          />
-          <AboutImage
-            align="center"
-            src={incitememe}
-            alt="Humanitarian information about website"
-          />
-          <AboutImage
-            align="center"
-            src={humanitarian}
-            alt="Meme about website"
-          />
-        </ImageContainer>
+        <ImageCarousel {...carouselSettings}>
+          <div>
+            <CarouselImage
+              src={enviromeme}
+              alt="Meme and information about the environment"
+            />
+          </div>
+          <div>
+            <CarouselImage
+              src={incitememe}
+              alt="Humanitarian information about website"
+            />
+          </div>
+          <div>
+            <CarouselImage src={humanitarian} alt="Meme about website" />
+          </div>
+        </ImageCarousel>
         <AboutIntro>
           InCite is a new type of media created in may 2024 by eskinder fitsum.
           in november of 2020 the tigray region of ethiopia went through
@@ -140,9 +158,7 @@ const About = () => {
           that the average person has no idea about that is the inspiration for
           InCite.
         </AboutIntro>
-        <ImageContainer>
-          <AboutUsImage align="center" src={aboutUsImage} alt="About Us" />
-        </ImageContainer>
+        <AboutUsImage align="center" src={aboutUsImage} alt="About Us" />
         <AboutHeading>mission statement</AboutHeading>
         <AboutLowerContent>
           most people don't really know much about global conflicts or what's
