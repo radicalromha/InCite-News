@@ -6,7 +6,6 @@ import incitememe from "../assets/incitememe.png";
 import enviromeme from "../assets/enviromeme.png";
 import humanitarian from "../assets/humanitarian.png";
 import "slick-carousel/slick/slick.css";
-
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
@@ -96,17 +95,17 @@ const AboutBottom = styled.p`
 const NavLink = styled(Link)`
   display: inline-block;
   margin: 1em;
-  padding: 0.5em 1em;
+  padding: 0.5em 1.5em;
   background-color: #007bff;
   color: white;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
 
   &:hover {
     background-color: #0056b3;
   }
 `;
-
 const About = () => {
   const carouselSettings = {
     dots: true,
