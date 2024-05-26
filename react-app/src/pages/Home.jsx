@@ -1,9 +1,32 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
-import AboutFooter from "./Footer";
+import styled, { keyframes } from "styled-components";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+
+// Animations
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+// Styled Components
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+const MainContent = styled.div`
+  flex: 1;
+  padding: 2rem;
+  animation: ${fadeIn} 1s ease-out;
+`;
 
 const HomeContainer = styled.div`
-  padding: 2em;
   text-align: center;
 `;
 
@@ -19,33 +42,20 @@ const HomeContent = styled.p`
   color: #666;
 `;
 
-const NavLink = styled(Link)`
-  display: inline-block;
-  margin: 1em;
-  padding: 0.5em 1em;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-
-  &:hover {
-    background-color: #0056b3;
-  }
-`;
-
 const Home = () => {
   return (
-    <HomeContainer>
-      <HomeHeading>welcome to InCite</HomeHeading>
-      <HomeContent>where attention spans are short so is the news</HomeContent>
-      <NavLink to="/about">About Us</NavLink>
-      <NavLink to="/world">World News</NavLink>
-      <NavLink to="/breaking">Breaking News</NavLink>
-      <NavLink to="/business">Business</NavLink>
-      <NavLink to="/tech">Tech</NavLink>
-      <NavLink to="/legal">Legal</NavLink>
-      <AboutFooter />
-    </HomeContainer>
+    <PageContainer>
+      <NavBar />
+      <MainContent>
+        <HomeContainer>
+          <HomeHeading>Welcome to InCite</HomeHeading>
+          <HomeContent>
+            where attention spans are short so is the news
+          </HomeContent>
+        </HomeContainer>
+      </MainContent>
+      <Footer />
+    </PageContainer>
   );
 };
 
