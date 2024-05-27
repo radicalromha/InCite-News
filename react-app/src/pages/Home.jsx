@@ -48,7 +48,7 @@ const Home = () => {
       <NavBar />
       <MainContent>
         <HomeContainer>
-          <HomeHeading>Welcome to InCite</HomeHeading>
+          <HomeHeading>welcome to InCite</HomeHeading>
           <HomeContent>
             where attention spans are short so is the news
           </HomeContent>

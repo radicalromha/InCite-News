@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const API_KEY = "3fb4afe9f246428f8264e9f32f429620";
+const API_KEY = "e3d5a9927b4ad5c9214d9bcbe3b006cb";
 
-const fetchNewsData = async () => {
+const fetchNewsData = async (category = "general") => {
   try {
     const response = await axios.get(
-      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
+      `https://gnews.io/api/v4/top-headlines?token=${API_KEY}&lang=en&topic=${category}`
     );
     return response.data;
   } catch (error) {
@@ -13,3 +13,5 @@ const fetchNewsData = async () => {
     throw error;
   }
 };
+
+export default fetchNewsData;

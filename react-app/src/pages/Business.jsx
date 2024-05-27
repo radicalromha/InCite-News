@@ -1,6 +1,8 @@
+import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import fetchNewsData from "../components/fetchNewsData";
 
 // Animations
 const fadeIn = keyframes`
@@ -38,7 +40,6 @@ const NewsCard = styled.div`
   padding: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-out;
-
   &:hover {
     transform: translateY(-5px);
   }
@@ -54,20 +55,31 @@ const NewsContent = styled.p`
   line-height: 1.5;
 `;
 
-const Breaking = () => {
+const Business = () => {
+  const [newsData, setNewsData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchNewsData("Business News");
+        setNewsData(data.articles);
+      } catch (error) {
+        console.error("Error fetching news data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <PageContainer>
       <NavBar />
       <MainContent>
         <NewsContainer>
-          {[...Array(6)].map((_, index) => (
+          {newsData.map((article, index) => (
             <NewsCard key={index}>
-              <NewsHeading>Breaking News {index + 1}</NewsHeading>
-              <NewsContent>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                euismod, nisl nec tincidunt lacinia, nunc nisl aliquam nisl,
-                eget aliquam nisl nisl eget nisl.
-              </NewsContent>
+              <NewsHeading>{article.title}</NewsHeading>
+              <NewsContent>{article.description}</NewsContent>
             </NewsCard>
           ))}
         </NewsContainer>
@@ -77,4 +89,4 @@ const Breaking = () => {
   );
 };
 
-export default Breaking;
+export default Business;

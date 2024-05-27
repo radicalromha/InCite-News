@@ -1,12 +1,13 @@
+import React, { useState, useEffect } from "react";
 import fetchNewsData from "./fetchNewsData";
 
 const NewsComponent = () => {
-  const [newsData, setNewsData] = useState([]); // use usestate as a var tracker/updater????
+  const [newsData, setNewsData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchNewsData();
+        const data = await fetchNewsData("business");
         setNewsData(data.articles);
       } catch (error) {
         console.error("Error fetching news data:", error);

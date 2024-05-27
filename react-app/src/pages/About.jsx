@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import aboutUsImage from "../assets/aboutus.png";
 import incitememe from "../assets/incitememe.png";
 import enviromeme from "../assets/enviromeme.png";
@@ -6,6 +5,7 @@ import humanitarian from "../assets/humanitarian.png";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import ImageCarouselComponent from "../components/ImageCarousel";
+import styled, { keyframes } from "styled-components";
 
 const fadeIn = keyframes`
 0% {
