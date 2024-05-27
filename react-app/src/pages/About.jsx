@@ -1,25 +1,24 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import aboutUsImage from "../assets/aboutus.png";
 import incitememe from "../assets/incitememe.png";
 import enviromeme from "../assets/enviromeme.png";
 import humanitarian from "../assets/humanitarian.png";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import ImageCarouselComponent from "../components/ImageCarousel";
 
-// Animations
 const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+0% {
+  opacity: 0;
+  transform: translateX(-10rem);
+}
+
+100% {
+  opacity: 1;
+  transform: translate(0);
+}
 `;
 
-// Styled Components
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -65,22 +64,6 @@ const AboutIntro = styled.p`
   text-align: center;
 `;
 
-const ImageCarousel = styled(Slider)`
-  margin-bottom: 20px;
-  .slick-slide > div {
-    padding: 0 10px;
-  }
-  .slick-list {
-    margin: 0 -10px;
-  }
-`;
-
-const CarouselImage = styled.img`
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-`;
-
 const AboutLowerContent = styled.p`
   font-family: "Garamond", sans-serif;
   font-size: 2em;
@@ -119,6 +102,21 @@ const About = () => {
     autoplaySpeed: 3000,
   };
 
+  const carouselImages = [
+    {
+      src: enviromeme,
+      alt: "Meme and information about the environment",
+    },
+    {
+      src: incitememe,
+      alt: "Humanitarian information about website",
+    },
+    {
+      src: humanitarian,
+      alt: "Meme about website",
+    },
+  ];
+
   return (
     <PageContainer>
       <NavBar />
@@ -129,23 +127,10 @@ const About = () => {
             InCite is a new way of conceptualizing social and news media in
             general so peep game and lock in.
           </AboutHook>
-          <ImageCarousel {...carouselSettings}>
-            <div>
-              <CarouselImage
-                src={enviromeme}
-                alt="Meme and information about the environment"
-              />
-            </div>
-            <div>
-              <CarouselImage
-                src={incitememe}
-                alt="Humanitarian information about website"
-              />
-            </div>
-            <div>
-              <CarouselImage src={humanitarian} alt="Meme about website" />
-            </div>
-          </ImageCarousel>
+          <ImageCarouselComponent
+            images={carouselImages}
+            settings={carouselSettings}
+          />
           <AboutIntro>
             InCite is a new type of media created in may 2024 by eskinder
             fitsum. in november of 2020 the tigray region of ethiopia went
