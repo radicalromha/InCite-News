@@ -23,7 +23,6 @@ const App = () => {
         <Route path="/tech" element={<Tech />} />
         <Route path="/legal" element={<Legal />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="*" element={<SideBar />} />
       </Routes>
     </Router>
   );
