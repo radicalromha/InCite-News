@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Auth from "../components/auth";
 
 const NavBar = styled.div`
   display: flex;
@@ -72,8 +73,7 @@ const Navbar = () => {
       </NavLinks>
       <SearchBar placeholder="Search..." />
       <AuthButtons>
-        <Button>Sign In</Button>
-        <Button>Register</Button>
+        <Auth />
       </AuthButtons>
     </NavBar>
   );

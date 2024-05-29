@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
