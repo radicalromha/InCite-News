@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import fetchNewsData from "../components/fetchNewsData";
 import NewsCard from "../components/NewsCard";
+import placeholderImage from "../assets/incitelogo.png";
 
 // Animations
 const fadeIn = keyframes`
@@ -36,16 +37,21 @@ const NewsContainer = styled.div`
 
 const World = () => {
   const [newsData, setNewsData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
+      setHasError(false);
       try {
-        const data = await fetchNewsData("World news");
+        const data = await fetchNewsData("General");
         setNewsData(data.articles);
       } catch (error) {
         setHasError(true);
         console.error("Error fetching news data:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -56,18 +62,23 @@ const World = () => {
     <PageContainer>
       <NavBar />
       <MainContent>
-        <NewsContainer>
-          {newsData.map((article, index) => (
-            <NewsCard
-              key={index}
-              title={article.title}
-              description={article.description}
-              urlToImage={article.urlToImage}
-              url={article.url}
-            />
-          ))}
-          {hasError && <p>An error occurred while fetching the news data.</p>}
-        </NewsContainer>
+        {loading ? (
+          <p>Loading...</p>
+        ) : hasError ? (
+          <p>An error occurred while fetching the news data.</p>
+        ) : (
+          <NewsContainer>
+            {newsData.map((article, index) => (
+              <NewsCard
+                key={index}
+                title={article.title}
+                description={article.description}
+                src={article.image || article.urlToImage || placeholderImage}
+                url={article.url}
+              />
+            ))}
+          </NewsContainer>
+        )}
       </MainContent>
       <Footer />
     </PageContainer>

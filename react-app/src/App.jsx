@@ -6,7 +6,7 @@ import World from "./pages/World";
 import Breaking from "./pages/Breaking";
 import Business from "./pages/Business";
 import Tech from "./pages/Tech";
-import Legal from "./pages/Legal";
+import Health from "./pages/Health";
 
 const NotFound = () => <div>404 - Page Not Found</div>;
 
@@ -20,7 +20,7 @@ const App = () => {
         <Route path="/breaking" element={<Breaking />} />
         <Route path="/business" element={<Business />} />
         <Route path="/tech" element={<Tech />} />
-        <Route path="/legal" element={<Legal />} />
+        <Route path="/health" element={<Health />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

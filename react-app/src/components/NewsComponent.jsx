@@ -1,75 +1,81 @@
 import React, { useState, useEffect } from "react";
 import fetchNewsData from "./fetchNewsData";
-import defaultImage from "../assets/incitelogo";
+import NewsCard from "../components/NewsCard";
 
-const NewsItem = ({ title, description, urlToImage, url }) => {
+const NewsComponent = () => {
+  const [newsData, setNewsData] = useState([]);
+  const [category, setCategory] = useState("general");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const data = await fetchNewsData(category);
+        setNewsData(data.articles);
+      } catch (error) {
+        setError("Error fetching news data.");
+        console.error("Error fetching news data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, [category]);
+
+  const handleCategoryChange = (event) => {
+    setCategory(event.target.value);
+  };
+
   return (
-    <div
-      className="card bg-dark text-light mb-3 d-inline-block my-3 mx-3"
-      style={{ maxWidth: "345px" }}
-    >
-      <img
-        src={urlToImage ? urlToImage : defaultImage}
-        style={{ height: "200px", width: "343px" }}
-        className="card-img-top"
-        alt="..."
-      />
-      <div className="card-body">
-        <h5 className="card-title">{title.slice(0, 50)}</h5>
-        <p className="card-text">
-          {description
-            ? description.slice(0, 90)
-            : "News at its best for the world"}
-        </p>
-        <a
-          href={url}
-          className="btn btn-primary"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Read More
-        </a>
+    <div style={styles.newsContainer}>
+      <h1>Latest News</h1>
+      <div style={styles.categorySelector}>
+        <label htmlFor="category">Choose a category:</label>
+        <select id="category" value={category} onChange={handleCategoryChange}>
+          <option value="general">General</option>
+          <option value="world">World</option>
+          <option value="breaking-news">Breaking News</option>
+          <option value="legal">Legal</option>
+        </select>
       </div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>{error}</p>
+      ) : newsData.length > 0 ? (
+        <div style={styles.newsList}>
+          {newsData.map((article) => (
+            <NewsCard
+              key={article.url}
+              title={article.title}
+              description={article.description}
+              src={article.image}
+              url={article.url}
+            />
+          ))}
+        </div>
+      ) : (
+        <p>No articles available.</p>
+      )}
     </div>
   );
 };
 
-const NewsComponent = () => {
-  const [state, setState] = useState([]);
-  const [hasError, setHasError] = useState(false);
-
-  const fetchData = async () => {
-    try {
-      const data = await fetchNewsData();
-      setState(data.articles);
-    } catch (error) {
-      setHasError(true);
-      console.error("Error fetching news data:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  return (
-    <>
-      <h2 className="d-flex justify-content-center p-4">
-        Latest <span className="badge text-bg-success"> news</span>
-      </h2>
-      {state &&
-        state.map((news, index) => (
-          <NewsItem
-            key={index}
-            title={news.title}
-            description={news.description}
-            urlToImage={news.urlToImage}
-            url={news.url}
-          />
-        ))}
-      {hasError && <p>An error occurred while fetching the news data.</p>}
-    </>
-  );
+const styles = {
+  newsContainer: {
+    padding: "20px",
+  },
+  categorySelector: {
+    marginBottom: "20px",
+  },
+  newsList: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "20px",
+  },
 };
 
 export default NewsComponent;

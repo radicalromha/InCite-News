@@ -3,6 +3,8 @@ import styled, { keyframes } from "styled-components";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import fetchNewsData from "../components/fetchNewsData";
+import NewsCard from "../components/NewsCard";
+import placeholderImage from "../assets/incitelogo.png";
 
 // Animations
 const fadeIn = keyframes`
@@ -33,38 +35,23 @@ const NewsContainer = styled.div`
   grid-gap: 2rem;
 `;
 
-const NewsCard = styled.div`
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-out;
-  &:hover {
-    transform: translateY(-5px);
-  }
-`;
-
-const NewsHeading = styled.h2`
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-`;
-
-const NewsContent = styled.p`
-  font-size: 1rem;
-  line-height: 1.5;
-`;
-
 const Tech = () => {
   const [newsData, setNewsData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
+      setHasError(false);
       try {
-        const data = await fetchNewsData("Tech news");
+        const data = await fetchNewsData("Technology");
         setNewsData(data.articles);
       } catch (error) {
+        setHasError(true);
         console.error("Error fetching news data:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -75,14 +62,23 @@ const Tech = () => {
     <PageContainer>
       <NavBar />
       <MainContent>
-        <NewsContainer>
-          {newsData.map((article, index) => (
-            <NewsCard key={index}>
-              <NewsHeading>{article.title}</NewsHeading>
-              <NewsContent>{article.description}</NewsContent>
-            </NewsCard>
-          ))}
-        </NewsContainer>
+        {loading ? (
+          <p>Loading...</p>
+        ) : hasError ? (
+          <p>An error occurred while fetching the news data.</p>
+        ) : (
+          <NewsContainer>
+            {newsData.map((article, index) => (
+              <NewsCard
+                key={index}
+                title={article.title}
+                description={article.description}
+                src={article.image || article.urlToImage || placeholderImage}
+                url={article.url}
+              />
+            ))}
+          </NewsContainer>
+        )}
       </MainContent>
       <Footer />
     </PageContainer>

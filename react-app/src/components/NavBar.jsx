@@ -69,7 +69,7 @@ const Navbar = () => {
         <NavLink to="/breaking">Breaking</NavLink>
         <NavLink to="/business">Business</NavLink>
         <NavLink to="/tech">Tech</NavLink>
-        <NavLink to="/legal">Legal</NavLink>
+        <NavLink to="/health">Health</NavLink>
       </NavLinks>
       <SearchBar placeholder="Search..." />
       <AuthButtons>

@@ -67,3 +67,35 @@ body {
 .custom-link:hover {
   background-color: #0056b3;
 }
+.news-item {
+  background-color: #343a40; /* Dark background like Bootstrap bg-dark */
+  color: #f8f9fa; /* Light text like Bootstrap text-light */
+  margin-bottom: 1.5rem; /* Similar to mb-3 */
+  display: inline-block; /* For inline-block behavior */
+  margin: 1.5rem 1rem; /* Similar to my-3 mx-3 */
+  max-width: 345px; /* Matches card max-width */
+}
+
+.news-item__image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover; /* To make image fit nicely */
+}
+
+.news-item__content {
+  padding: 1rem; /* Add padding for content */
+}
+
+.news-item__title {
+  margin-bottom: 0.5rem;
+}
+
+.news-item__link {
+  display: inline-block; /* Make button-like */
+  padding: 0.375rem 0.75rem; /* Similar to btn padding */
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  text-decoration: none;
+  border-radius: 0.25rem; /* Add border radius */
+}
