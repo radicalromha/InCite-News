@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import fetchNewsData from "../components/fetchNewsData";
+import NewsCard from "../components/NewsCard";
 
 // Animations
 const fadeIn = keyframes`
@@ -33,30 +34,9 @@ const NewsContainer = styled.div`
   grid-gap: 2rem;
 `;
 
-const NewsCard = styled.div`
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-out;
-  &:hover {
-    transform: translateY(-5px);
-  }
-`;
-
-const NewsHeading = styled.h2`
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-`;
-
-const NewsContent = styled.p`
-  font-size: 1rem;
-  line-height: 1.5;
-`;
-
 const World = () => {
   const [newsData, setNewsData] = useState([]);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -64,6 +44,7 @@ const World = () => {
         const data = await fetchNewsData("World news");
         setNewsData(data.articles);
       } catch (error) {
+        setHasError(true);
         console.error("Error fetching news data:", error);
       }
     };
@@ -77,11 +58,15 @@ const World = () => {
       <MainContent>
         <NewsContainer>
           {newsData.map((article, index) => (
-            <NewsCard key={index}>
-              <NewsHeading>{article.title}</NewsHeading>
-              <NewsContent>{article.description}</NewsContent>
-            </NewsCard>
+            <NewsCard
+              key={index}
+              title={article.title}
+              description={article.description}
+              urlToImage={article.urlToImage}
+              url={article.url}
+            />
           ))}
+          {hasError && <p>An error occurred while fetching the news data.</p>}
         </NewsContainer>
       </MainContent>
       <Footer />
