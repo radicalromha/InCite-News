@@ -23,6 +23,14 @@ const PageContainer = styled.div`
   min-height: 100vh;
 `;
 
+const PagebgColor = styled.div`
+  display: flex;
+  background-color: #636363;
+  color: white;
+  min-height: 100vh;
+  flex-direction: column;
+`;
+
 const MainContent = styled.div`
   flex: 1;
   padding: 2rem;
@@ -59,29 +67,31 @@ const World = () => {
   }, []);
 
   return (
-    <PageContainer>
-      <NavBar />
-      <MainContent>
-        {loading ? (
-          <p>Loading...</p>
-        ) : hasError ? (
-          <p>An error occurred while fetching the news data.</p>
-        ) : (
-          <NewsContainer>
-            {newsData.map((article, index) => (
-              <NewsCard
-                key={index}
-                title={article.title}
-                description={article.description}
-                src={article.image || article.urlToImage || placeholderImage}
-                url={article.url}
-              />
-            ))}
-          </NewsContainer>
-        )}
-      </MainContent>
-      <Footer />
-    </PageContainer>
+    <PagebgColor>
+      <PageContainer>
+        <NavBar />
+        <MainContent>
+          {loading ? (
+            <p>Loading...</p>
+          ) : hasError ? (
+            <p>An error occurred while fetching the news data.</p>
+          ) : (
+            <NewsContainer>
+              {newsData.map((article, index) => (
+                <NewsCard
+                  key={index}
+                  title={article.title}
+                  description={article.description}
+                  src={article.image || article.urlToImage || placeholderImage}
+                  url={article.url}
+                />
+              ))}
+            </NewsContainer>
+          )}
+        </MainContent>
+        <Footer />
+      </PageContainer>
+    </PagebgColor>
   );
 };
 

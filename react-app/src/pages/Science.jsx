@@ -17,10 +17,18 @@ const fadeIn = keyframes`
 `;
 
 // Styled Components
+const PagebgColor = styled.div`
+  display: flex;
+  background-color: #636363;
+  color: white;
+  min-height: 100vh;
+  flex-direction: column;
+`;
+
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  flex: 1;
 `;
 
 const MainContent = styled.div`
@@ -35,7 +43,7 @@ const NewsContainer = styled.div`
   grid-gap: 2rem;
 `;
 
-const Breaking = () => {
+const Science = () => {
   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -45,7 +53,7 @@ const Breaking = () => {
       setLoading(true);
       setHasError(false);
       try {
-        const data = await fetchNewsData("Updates");
+        const data = await fetchNewsData("science");
         setNewsData(data.articles);
       } catch (error) {
         setHasError(true);
@@ -59,30 +67,33 @@ const Breaking = () => {
   }, []);
 
   return (
-    <PageContainer>
-      <NavBar />
-      <MainContent>
-        {loading ? (
-          <p>Loading...</p>
-        ) : hasError ? (
-          <p>An error occurred while fetching the news data.</p>
-        ) : (
-          <NewsContainer>
-            {newsData.map((article, index) => (
-              <NewsCard
-                key={index}
-                title={article.title}
-                description={article.description}
-                src={article.image || article.urlToImage || placeholderImage}
-                url={article.url}
-              />
-            ))}
-          </NewsContainer>
-        )}
-      </MainContent>
-      <Footer />
-    </PageContainer>
+    <PagebgColor>
+      <PageContainer>
+        <NavBar />
+        <MainContent>
+          <p>Your content here</p>
+          {loading ? (
+            <p>Loading...</p>
+          ) : hasError ? (
+            <p>An error occurred while fetching the news data.</p>
+          ) : (
+            <NewsContainer>
+              {newsData.map((article, index) => (
+                <NewsCard
+                  key={index}
+                  title={article.title}
+                  description={article.description}
+                  src={article.image || article.urlToImage || placeholderImage}
+                  url={article.url}
+                />
+              ))}
+            </NewsContainer>
+          )}
+        </MainContent>
+        <Footer />
+      </PageContainer>
+    </PagebgColor>
   );
 };
 
-export default Breaking;
+export default Science;

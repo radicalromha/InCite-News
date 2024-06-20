@@ -3,7 +3,7 @@ import "./index.css";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import World from "./pages/World";
-import Breaking from "./pages/Breaking";
+import Science from "./pages/Science";
 import Business from "./pages/Business";
 import Tech from "./pages/Tech";
 import Health from "./pages/Health";
@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/world" element={<World />} />
-        <Route path="/breaking" element={<Breaking />} />
+        <Route path="/science" element={<Science />} />
         <Route path="/business" element={<Business />} />
         <Route path="/tech" element={<Tech />} />
         <Route path="/health" element={<Health />} />

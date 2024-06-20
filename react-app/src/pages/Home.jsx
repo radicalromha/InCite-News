@@ -42,6 +42,10 @@ const HomeContent = styled.p`
   color: #666;
 `;
 
+const HomeGraphics = styled.p`
+  text-align: center;
+`;
+
 const Home = () => {
   return (
     <PageContainer>

@@ -66,7 +66,7 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/world">World</NavLink>
-        <NavLink to="/breaking">Breaking</NavLink>
+        <NavLink to="/science">Science</NavLink>
         <NavLink to="/business">Business</NavLink>
         <NavLink to="/tech">Tech</NavLink>
         <NavLink to="/health">Health</NavLink>
