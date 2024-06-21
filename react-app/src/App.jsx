@@ -7,6 +7,7 @@ import Science from "./pages/Science";
 import Business from "./pages/Business";
 import Tech from "./pages/Tech";
 import Health from "./pages/Health";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const NotFound = () => <div>404 - Page Not Found</div>;
 

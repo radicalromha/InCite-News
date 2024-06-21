@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import TopMemeImageSrc from "../assets/topmeme.jpg"; // Import the image with a proper variable name
 
 // Animations
 const fadeIn = keyframes`
@@ -14,6 +15,16 @@ const fadeIn = keyframes`
 `;
 
 // Styled Components
+
+const TopMeme = styled.img`
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 2em 0;
+  display: block;
+  margin: 0 auto;
+`;
+
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -52,10 +63,12 @@ const Home = () => {
       <NavBar />
       <MainContent>
         <HomeContainer>
-          <HomeHeading>welcome to InCite</HomeHeading>
+          <HomeHeading>Welcome to InCite</HomeHeading>
           <HomeContent>
-            where attention spans are short so is the news
+            Where attention spans are short, so is the news.
           </HomeContent>
+          <TopMeme src={TopMemeImageSrc} alt="Meme about projects" />{" "}
+          {/* Use the TopMeme styled component */}
         </HomeContainer>
       </MainContent>
       <Footer />
