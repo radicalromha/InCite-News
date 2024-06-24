@@ -10,10 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
     "@craco/craco": "^7.1.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@ionic/react": "^8.2.2",
+    "@radix-ui/themes": "^3.1.1",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "firebase": "^10.12.2",
+    "framer-motion": "^11.2.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
