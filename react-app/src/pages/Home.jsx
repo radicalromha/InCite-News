@@ -2,7 +2,15 @@ import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import TopMemeImageSrc from "../assets/topmeme.jpg"; // Import the image with a proper variable name
+import TopMemeImageSrc from "../assets/topmeme.jpg";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Image,
+  Button,
+} from "@nextui-org/react";
 
 // Animations
 const fadeIn = keyframes`
@@ -67,8 +75,7 @@ const Home = () => {
           <HomeContent>
             Where attention spans are short, so is the news.
           </HomeContent>
-          <TopMeme src={TopMemeImageSrc} alt="Meme about projects" />{" "}
-          {/* Use the TopMeme styled component */}
+          <TopMeme src={TopMemeImageSrc} alt="Meme about projects" />
         </HomeContainer>
       </MainContent>
       <Footer />
@@ -77,3 +84,4 @@ const Home = () => {
 };
 
 export default Home;
+<q></q>;
