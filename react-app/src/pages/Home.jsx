@@ -3,14 +3,9 @@ import styled, { keyframes } from "styled-components";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import TopMemeImageSrc from "../assets/topmeme.jpg";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Image,
-  Button,
-} from "@nextui-org/react";
+import { Button } from "@nextui-org/button";
+import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
+import MyCard from "./MyCard.jsx";
 
 // Animations
 const fadeIn = keyframes`
@@ -77,6 +72,7 @@ const Home = () => {
           </HomeContent>
           <TopMeme src={TopMemeImageSrc} alt="Meme about projects" />
         </HomeContainer>
+        <MyCard></MyCard>
       </MainContent>
       <Footer />
     </PageContainer>
@@ -84,4 +80,3 @@ const Home = () => {
 };
 
 export default Home;
-<q></q>;
