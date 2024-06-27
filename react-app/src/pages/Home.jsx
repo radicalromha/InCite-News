@@ -2,10 +2,8 @@ import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import TopMemeImageSrc from "../assets/topmeme.jpg";
-import { Button } from "@nextui-org/button";
-import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
-import MyCard from "./MyCard.jsx";
+import DevCard from "./DPCard";
+import RightsCard from "./HRCard";
 
 // Animations
 const fadeIn = keyframes`
@@ -60,6 +58,17 @@ const HomeGraphics = styled.p`
   text-align: center;
 `;
 
+const CardContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 2rem;
+
+  > * {
+    width: 48%; // Each child (card) takes up 48% of the container
+  }
+`;
+
 const Home = () => {
   return (
     <PageContainer>
@@ -70,9 +79,11 @@ const Home = () => {
           <HomeContent>
             Where attention spans are short, so is the news.
           </HomeContent>
-          <TopMeme src={TopMemeImageSrc} alt="Meme about projects" />
         </HomeContainer>
-        <MyCard></MyCard>
+        <CardContainer>
+          <DevCard />
+          <RightsCard />
+        </CardContainer>
       </MainContent>
       <Footer />
     </PageContainer>
