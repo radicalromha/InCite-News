@@ -4,6 +4,8 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import DevCard from "./DPCard";
 import RightsCard from "./HRCard";
+import WorldCard from "./WBCard";
+import AmnesCard from "./AICard";
 
 // Animations
 const fadeIn = keyframes`
@@ -83,6 +85,10 @@ const Home = () => {
         <CardContainer>
           <DevCard />
           <RightsCard />
+        </CardContainer>
+        <CardContainer>
+          <WorldCard />
+          <AmnesCard />
         </CardContainer>
       </MainContent>
       <Footer />

@@ -13,7 +13,6 @@ import {
   Flex,
   Link,
 } from "@chakra-ui/react";
-import HumanRights from "../assets/humanrights.jpg";
 import DevelopmentProgram from "../assets/devlopmentprogram.jpg";
 
 function DevCard() {
@@ -54,7 +53,7 @@ function DevCard() {
         <Flex justify="center" width="100%">
           <Link href="https://www.undp.org/" isExternal>
             <Button variant="solid" colorScheme="blue">
-              Visit undp
+              undp
             </Button>
           </Link>
         </Flex>

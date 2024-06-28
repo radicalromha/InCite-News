@@ -46,7 +46,7 @@ function RightsCard() {
         <Flex justify="center" width="100%">
           <Link href="https://www.ohchr.org/en/ohchr_homepage" isExternal>
             <Button variant="solid" colorScheme="blue">
-              Visit ohchr
+              ohchr
             </Button>
           </Link>
         </Flex>
