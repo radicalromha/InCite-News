@@ -6,6 +6,8 @@ import DevCard from "./DPCard";
 import RightsCard from "./HRCard";
 import WorldCard from "./WBCard";
 import AmnesCard from "./AICard";
+import EnviroCard from "./EPCard";
+import WoCard from "./WPCard";
 
 // Animations
 const fadeIn = keyframes`
@@ -89,6 +91,10 @@ const Home = () => {
         <CardContainer>
           <WorldCard />
           <AmnesCard />
+        </CardContainer>
+        <CardContainer>
+          <EnviroCard />
+          <WoCard />
         </CardContainer>
       </MainContent>
       <Footer />
