@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: "14"
 
+      - name: Set Working Directory
+        run: cd ./react-app
+
       - name: Install Dependencies
         run: npm ci || (npm install && npm ci)
 
