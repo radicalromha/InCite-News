@@ -17,7 +17,7 @@ import Amnesty from "../assets/amnesty.jpg";
 
 function AmnesCard() {
   return (
-    <Card maxW="ex">
+    <Card maxW="ex" bgColor="#76ABAE" color="white">
       <CardBody>
         <Image src={Amnesty} alt="Amnesty International" />
         <Stack mt="6" spacing="3">

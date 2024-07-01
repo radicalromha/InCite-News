@@ -5,6 +5,36 @@ import {
   signOut,
 } from "firebase/auth";
 import { useState } from "react";
+import styled from "styled-components";
+
+const AuthContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Input = styled.input`
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+`;
+
+const Button = styled.button`
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
 
 const Auth = () => {
   const [email, setEmail] = useState("");
@@ -32,22 +62,21 @@ const Auth = () => {
   };
 
   return (
-    <div>
-      <input
+    <AuthContainer>
+      <Input
         placeholder="Email..."
         onChange={(e) => setEmail(e.target.value)}
       />
-      <input
+      <Input
         placeholder="Password..."
         type="password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={signIn}>Sign in</button>
-
-      <button onClick={signInWithGoogle}>Sign in with Google</button>
-
-      <button onClick={logOut}>Logout</button>
-    </div>
+      <Button onClick={signIn}>Sign in</Button>
+      <Button onClick={signInWithGoogle}>Google</Button>
+      <Button onClick={logOut}>Logout</Button>
+    </AuthContainer>
   );
 };
+
 export default Auth;

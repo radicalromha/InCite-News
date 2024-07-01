@@ -17,7 +17,7 @@ import WorldBank from "../assets/worldbank.jpg";
 
 function WorldCard() {
   return (
-    <Card maxW="ex">
+    <Card maxW="ex" bgColor="#76ABAE" color="white">
       <CardBody>
         <Image src={WorldBank} alt="The World Bank" />
         <Stack mt="6" spacing="3">

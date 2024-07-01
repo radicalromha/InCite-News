@@ -18,7 +18,7 @@ const NavLinks = styled.div`
 
 const NavLink = styled(Link)`
   display: inline-block;
-  margin: 1em;
+  margin: 0 1em;
   padding: 0.5em 1.5em;
   background-color: #007bff;
   color: white;
@@ -41,22 +41,6 @@ const SearchBar = styled.input`
 const AuthButtons = styled.div`
   display: flex;
   align-items: center;
-`;
-
-const Button = styled.button`
-  margin-left: 1rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease-out;
-
-  &:hover {
-    background-color: #0056b3;
-  }
 `;
 
 const Navbar = () => {

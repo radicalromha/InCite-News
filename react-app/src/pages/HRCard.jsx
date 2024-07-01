@@ -17,7 +17,7 @@ import HumanRights from "../assets/humanrights.jpg";
 
 function RightsCard() {
   return (
-    <Card maxW="ex">
+    <Card maxW="ex" bgColor="#76ABAE" color="white">
       <CardBody>
         <Image src={HumanRights} alt="Human Rights" />
         <Stack mt="6" spacing="3">

@@ -17,7 +17,7 @@ import Enviroment from "../assets/enviromentprogram.jpg";
 
 function EnviroCard() {
   return (
-    <Card maxW="ex">
+    <Card maxW="ex" bgColor="#76ABAE" color="white">
       <CardBody>
         <Image src={Enviroment} alt="The United Nations Enviroment Programme" />
         <Stack mt="6" spacing="3">

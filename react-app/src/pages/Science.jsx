@@ -29,6 +29,7 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  background: #31363f;
 `;
 
 const MainContent = styled.div`
