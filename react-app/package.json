@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "ci-install": "npm ci || (npm install && npm ci)",
-    "build": "react-scripts build",
+    "build": "npm install --prefix client && npm run build --prefix client",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
