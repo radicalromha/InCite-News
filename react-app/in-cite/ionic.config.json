@@ -1,7 +1,0 @@
-{
-  "name": "InCite",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "react-vite"
-}
